@@ -68,7 +68,7 @@ function is_paused() {
 }
 
 function get_meta_info(msg_id, timestamp) {
-    var title = document.getElementsByTagName('h2')[1].textContent;
+    var title = document.getElementsByTagName('h1')[0].textContent;
     var url = window.location.href;
     var image = document.querySelector('meta[property="og:image"]').getAttribute('content');
     var description = document.querySelector('meta[name="description"]').getAttribute('content');
