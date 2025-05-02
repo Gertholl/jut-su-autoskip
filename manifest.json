@@ -1,0 +1,38 @@
+{
+    "name": "Jut-Su AutoSkip",
+    "description": "Jut-Su AutoSkip",
+    "version": "1.0",
+    "manifest_version": 3,
+    "host_permissions": [
+        "*://*/*",
+        "https://api.telegram.org/*"
+    ],
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "background",
+        "webRequest",
+        "storage",
+        "https://api.telegram.org/*"
+    ],
+    "content_security_policy": {
+        "extension_pages": "default-src 'self'; connect-src https://api.telegram.org"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://jut.su/*"
+            ],
+            "js": [
+                "injected.js"
+            ],
+            "run_at": "document_end"
+        }
+    ]
+}
